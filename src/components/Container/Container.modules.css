@@ -1,0 +1,7 @@
+.container{
+    width: var(--width);
+    height: var(--height);
+    background: var(--background);
+    margin: var(--margin);
+    border: 1px solid rgb(193, 193, 193);
+}

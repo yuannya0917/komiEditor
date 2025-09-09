@@ -1,0 +1,11 @@
+.component-card{
+    width: 100px;
+    height: 100px;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(193, 193, 193);
+    margin: 2px;
+    border-radius: 10%;
+}

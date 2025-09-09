@@ -1,0 +1,9 @@
+.components-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.components-area{
+    display: flex;
+    flex-direction: column;
+}

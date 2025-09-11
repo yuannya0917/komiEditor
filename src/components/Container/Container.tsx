@@ -1,30 +1,42 @@
 import React from "react";
 import './Container.modules.css'
+import { useNode } from "@craftjs/core";
 
-interface ContainerProps{
-    width:string,
-    height:string,
-    background?:string,
-    margin?:string
+interface ContainerProps {
+    width?: string,
+    height?: string,
+    background?: string,
+    margin?: string,
+    padding?: string,
+    children?: React.ReactNode
 }
 
-export const Container:React.FC<ContainerProps>=({
+export const Container: React.FC<ContainerProps> = ({
     width,
     height,
     background,
-    margin
-})=>{
-    return(
-        <div 
+    margin,
+    padding,
+    children
+}) => {
+    const { connectors: { connect, drag } } = useNode();
+    return (
+        <div
             className="container"
+            ref={(ref) => {
+                if (ref) {
+                    connect(drag(ref))
+                }
+            }}
             style={{
-                '--width':`${width}px`,
-                '--height':`${height}px`,
-                '--background':background,
-                '--margin':margin
-            }as React.CSSProperties}
+                '--width': width,
+                '--height': height,
+                '--background': background,
+                '--margin': margin,
+                '--padding': padding
+            } as React.CSSProperties}
         >
-
+            {children}
         </div>
     )
 }

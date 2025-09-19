@@ -1,18 +1,15 @@
 import React from "react";
 import './ComponentCard.modules.css'
+import { Button } from "kohmin-ui";
 
 interface ComponentCardProps{
     name:string,
-    icon?:any
 }
-export const ComponentCard : React.FC<ComponentCardProps> = ({
-    name,
-    icon
-}) => {
+export const ComponentCard =React.forwardRef<any,ComponentCardProps> (({name
+},ref) => {
     return(
-        <div className="component-card">
-            <span>{name}</span>
-            <div>{icon}</div>
-        </div>
+        <button className="component-card" ref={ref}>
+            {name}
+        </button>
     )
-}
+})

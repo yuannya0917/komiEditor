@@ -1,6 +1,6 @@
 import React from "react";
 import { useEditor } from "@craftjs/core";
-import { Button } from "kohmin-ui";
+import { Button } from "antd";
 import type { UserComponent } from "@craftjs/core";
 
 export const SettingsPanel: UserComponent = () => {
@@ -32,7 +32,6 @@ export const SettingsPanel: UserComponent = () => {
                 {
                     selected.isDeletable ? (
                         <Button
-                            btnType="danger"
                             onClick={() => {
                                 actions.delete(selected.id)
                             }}
